@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet author="foxiam" id="1">
+        <sql>
+            create table leak_source
+            (
+                id  bigint not null auto_increment primary key,
+                source varchar(255) not null,
+                date varchar(255) not null,
+                constraint leak_source_id_uindex
+                    unique (id)
+            )
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

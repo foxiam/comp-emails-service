@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet author="foxiam" id="4">
+        <sql>
+            create table subscribers
+            (
+                id  bigint not null auto_increment primary key,
+                url varchar(255) not null,
+                constraint leak_source_id_uindex
+                    unique (id),
+                constraint leak_source_url_uindex
+                    unique (url)
+            )
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>
